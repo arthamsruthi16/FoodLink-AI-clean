@@ -1,20 +1,40 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 🍽️ FoodLink-AI
 
-# Run and deploy your AI Studio app
+FoodLink-AI is an AI-powered surplus food donation platform designed to reduce food waste and help fight hunger by connecting food donors with NGOs, volunteers, and people in need.
 
-This contains everything you need to run your app locally.
+The platform enables individuals, restaurants, hotels, event organizers, and businesses to donate surplus food quickly and efficiently. Using intelligent matching and location-based coordination, FoodLink-AI helps ensure that excess food reaches the right recipients before it goes to waste.
 
-View your app in AI Studio: https://ai.studio/apps/874a61c2-b200-4c80-b63b-60f0a226435f
+## 🌟 Key Features
 
-## Run Locally
+* 🍱 Donate surplus food in a few simple steps
+* 🤝 Connect food donors with NGOs and volunteers
+* 📍 Location-based food pickup and delivery
+* 🤖 AI-powered matching for faster distribution
+* 🔔 Real-time donation updates and notifications
+* 📱 Responsive and user-friendly interface
+* 🔒 Secure authentication and user management
 
-**Prerequisites:**  Node.js
+## 🎯 Objective
 
+* Reduce food wastage
+* Support hunger relief initiatives
+* Encourage community participation
+* Improve the efficiency of food donation and distribution
+* Promote sustainable and socially responsible practices
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🛠️ Technologies Used
+
+* React
+* Vite
+* TypeScript
+* Node.js
+* Express.js
+* AI Integration
+* HTML5
+* CSS3
+* JavaScript
+
+## 🚀 Vision
+
+Our vision is to build a sustainable ecosystem where surplus food is never wasted and reaches those who need it most, creating a positive social impact through technology.
+
