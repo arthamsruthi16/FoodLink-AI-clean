@@ -1,0 +1,27 @@
+{
+  "name": "foodlink-ai-backend",
+  "version": "1.0.0",
+  "description": "Production-ready backend for FoodLink AI using Node.js, Express, Firebase Firestore, and Firebase Authentication.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "lint": "eslint . --ext .js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "firebase-admin": "^12.3.0",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "nodemon": "^3.0.1"
+  }
+}

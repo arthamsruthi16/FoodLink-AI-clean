@@ -1,0 +1,55 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && request.auth.token.role == 'admin';
+    }
+
+    function isRestaurant() {
+      return isSignedIn() && request.auth.token.role == 'restaurant';
+    }
+
+    function isNgo() {
+      return isSignedIn() && request.auth.token.role == 'ngo';
+    }
+
+    match /users/{userId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && request.auth.uid == request.resource.data.authUid && request.resource.data.email == request.auth.token.email;
+      allow update: if isAdmin() || (isSignedIn() && request.auth.uid == resource.data.authUid);
+      allow delete: if false;
+    }
+
+    match /food_items/{itemId} {
+      allow read: if isSignedIn();
+      allow create: if isRestaurant() && request.auth.uid == request.resource.data.authUid;
+      allow update: if isAdmin() || (isRestaurant() && resource.data.authUid == request.auth.uid) || (isNgo() && request.auth.uid == request.resource.data.reservedByNgoId);
+      allow delete: if isAdmin() || (isRestaurant() && resource.data.authUid == request.auth.uid);
+    }
+
+    match /pickups/{pickupId} {
+      allow read: if isSignedIn();
+      allow create: if isNgo() || isAdmin();
+      allow update: if isAdmin() || request.auth.uid == resource.data.reservedByNgoId || request.auth.uid == resource.data.authUid;
+      allow delete: if false;
+    }
+
+    match /notifications/{notificationId} {
+      allow read: if isSignedIn();
+      allow create: if isAdmin() || request.auth.uid == request.resource.data.userId || request.resource.data.userId == 'all';
+      allow update: if isAdmin() || request.auth.uid == resource.data.userId;
+      allow delete: if false;
+    }
+
+    match /revoked_tokens/{tokenId} {
+      allow read: if false;
+      allow create: if isAdmin();
+      allow delete: if false;
+    }
+  }
+}

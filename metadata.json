@@ -1,0 +1,6 @@
+{
+  "name": "FoodLink AI",
+  "description": "Reducing Food Waste, Feeding Communities. Connecting surplus food from restaurants, hotels, and cafes with NGOs and food banks using AI freshness predictions, real-time tracking, and automated logistics.",
+  "requestFramePermissions": ["geolocation", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
